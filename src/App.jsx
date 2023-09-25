@@ -87,7 +87,7 @@ function PdfTemplate({ getNowDate }) {
         <div className="d-flex gap-2 mt-4 mb-4">
           <ReactToPrint
             trigger={() => (
-              <button className="btn btn-light text-secondary border fw-medium">
+              <button className="btn btn-light border">
                 <Print /> Cetak Bukti
               </button>
             )}
@@ -97,7 +97,7 @@ function PdfTemplate({ getNowDate }) {
 
           <button
             onClick={resetValue}
-            className="btn btn-light text-secondary border fw-medium"
+            className="btn btn-light border"
             aria-label="Reset"
           >
             <Refresh />
