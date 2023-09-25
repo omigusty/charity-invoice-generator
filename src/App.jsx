@@ -96,9 +96,9 @@ function PdfTemplate({ getNowDate }) {
           />
 
           <button
-            type="reset"
             onClick={resetValue}
             className="btn btn-light text-secondary border fw-medium"
+            aria-label="Reset"
           >
             <Refresh />
           </button>
@@ -108,6 +108,7 @@ function PdfTemplate({ getNowDate }) {
             type="text"
             value={treasurer}
             onChange={(e) => setTreasurer(e.target.value)}
+            aria-label="Name of treasurer"
           />
         </div>
 

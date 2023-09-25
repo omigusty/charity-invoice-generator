@@ -16,7 +16,7 @@ export default defineConfig({
         description: "Aplikasi pembuatan bukti penerimaan shadaqah otomatis",
         scope: "/",
         start_url: "/",
-        theme_color: "#f69435",
+        theme_color: "#F2F4F5",
         background_color: "#f69435",
         display: "standalone",
         icons: [
