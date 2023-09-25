@@ -14,13 +14,14 @@ function PdfTemplate({ getNowDate }) {
   const [information, setInformation] = useState();
 
   const resetValue = () => {
-    setTreasurer("Nurhasan, SE");
-    setNumber();
-    setDonor();
-    setAddress();
-    setAmount();
-    setReceiver();
-    setInformation();
+    window.location.reload();
+    // setTreasurer("Nurhasan, SE");
+    // setNumber();
+    // setDonor();
+    // setAddress();
+    // setAmount();
+    // setReceiver();
+    // setInformation();
   };
 
   return (
@@ -46,7 +47,7 @@ function PdfTemplate({ getNowDate }) {
               <ListLabel label="Tanggal" value={getNowDate} />
               <ListLabel label="Nama donatur" value={donor} />
               <ListLabel label="Alamat" value={address} />
-              <ListLabel label="Jumlah" value={amount} />
+              <ListLabel label="Jumlah" value={amount} isCurrency />
               <ListLabel label="Diberikan kepada" value={receiver} />
               <ListLabel label="Keterangan" value={information} />
             </div>
@@ -169,7 +170,7 @@ function PdfTemplate({ getNowDate }) {
                 className="form-control"
                 id="amount"
                 value={amount}
-                onChange={(e) => setAmount("Rp." + e.target.value)}
+                onChange={(e) => setAmount(e.target.value)}
               />
               <small className="form-text fst-italic">cth: 50,000</small>
             </div>
@@ -230,7 +231,7 @@ function Footer() {
   );
 }
 
-function ListLabel({ label, value }) {
+function ListLabel({ label, value, isCurrency }) {
   return (
     <>
       <div className="d-flex gap-2">
@@ -238,7 +239,11 @@ function ListLabel({ label, value }) {
           {label}
         </p>
         <p className="mb-1">:</p>
-        <p className="mb-1">{value}</p>
+        {isCurrency ? (
+          <p className="mb-1">Rp.{value}</p>
+        ) : (
+          <p className="mb-1">{value}</p>
+        )}
       </div>
     </>
   );
